@@ -1,14 +1,14 @@
 # AWX automated rollout and configuration
 #### v 0.1 230301
 
-This set of playbooks will roll out an AWX Insance on Openshift or Microshift (Other Kubernetes Distros possible, change "Route"-COde to "Ingress")
+This set of playbooks will roll out an AWX Instance on Openshift or Microshift (Other Kubernetes Distros possible, change "Route"-Code to "Ingress")
 
 ### Requirements:
  - Kubernetes Node or Cluster, Auth via kubeconfig file
  - AWX-Operator installed on Kuberentes Setup
 
 ### Customization:
-  - Add Credentials to secrets.yml. It's recommended to encrypt it with vault, after keys and passwords are inserted
+  - Add Credentials to secrets.yml. It's recommended to encrypt it with vault, after keys and passwords are inserted. Run Playbook with "--ask-vault-pass" to include encrypted secrets
   - Add your AWX confiuration as code into vars.yml
 
 ### further customization
