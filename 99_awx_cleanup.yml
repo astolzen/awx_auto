@@ -12,7 +12,7 @@
     K8S_AUTH_KUBECONFIG: "{{ awxsetup.kubeconfig }}"
 
   tasks:
-  - name: delete  AWX Route
+  - name: delete  AWX Route # <- Change to ingress cleanup when using Ingress instead of Route
     kubernetes.core.k8s:
       state: absent
       definition:

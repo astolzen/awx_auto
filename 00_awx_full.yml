@@ -5,8 +5,8 @@
   gather_facts: False
 
   vars_files:
-    - ../localfiles/secrets.yml
-    - ../localfiles/vars.yml
+    - secrets.yml
+    - vars.yml
 
   environment:
     K8S_AUTH_KUBECONFIG: "{{ awxsetup.kubeconfig }}"

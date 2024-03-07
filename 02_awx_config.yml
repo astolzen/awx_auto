@@ -20,7 +20,7 @@
   # Password will be in: {{ awxadmin.resources[0].data.password | b64decode }}
 
 - name: Upload Config to AWX
-  block:   # <- Run as block, to add AWX Passwd into temprary environment
+  block:   # <- Run as block, to add AWX Passwd into temporary environment
   - name: Create Organization
     awx.awx.organization:
       name: "{{ org.name }}"
