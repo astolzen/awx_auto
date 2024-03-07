@@ -12,27 +12,8 @@
         admin_password_secret: "{{ awxsetup.name }}-admin-password"
         postgres_storage_requirements:
           requests:
-            storage: 10Gi  # <- Change, if different Size of PGSQL-DB required
+            storage: 10Gi
         projects_persistence: true
-        projects_storage_size: 10Gi # <- Size for Project Persistence (Projects Git clones)
+        projects_storage_size: 10Gi
         projects_storage_access_mode: ReadWriteOnce
         auto_upgrade: true
-
-- name: Create AWX Route  # <- Replace with Ingress if not on Open- or Microshift 
-  kubernetes.core.k8s:
-    state: present
-    definition:
-      kind: Route
-      apiVersion: route.openshift.io/v1
-      metadata:
-        name: "{{ awxsetup.name }}-route"
-        namespace: "{{ awxsetup.namespace }}"
-      spec:
-        host: "{{ awxsetup.name }}.{{ awxsetup.baseurl }}"
-        to:
-          kind: Service
-          name: "{{ awxsetup.name }}-service"
-        port:
-          targetPort: http
-        wildcardPolicy: None
-
