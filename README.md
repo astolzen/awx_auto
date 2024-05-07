@@ -1,5 +1,5 @@
 # AWX automated rollout and configuration
-#### v 0.2 230307
+#### v 0.2 240307
 
 This set of playbooks will roll out an AWX Instance on Openshift or Microshift (Other Kubernetes Distros possible, change "Route"-Code to "Ingress")
 
